@@ -30,3 +30,5 @@ WARNING 2019-01-22T10:51:02.945372+08:00 Warn
 ERROR 2019-01-22T10:51:02.945376+08:00 Error
 DEBUG 2019-01-22T10:51:02.94538+08:00 Debug
 ```
+
+You can hide log level and timestamp by giving ShowLevel or ShowTime a false value

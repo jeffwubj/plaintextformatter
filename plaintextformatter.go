@@ -2,6 +2,7 @@ package plaintextformatter
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -37,7 +38,7 @@ func (f *PlainTextFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 	data["time"] = entry.Time.Format(timestampFormat)
 	data["message"] = entry.Message
-	data["severity"] = entry.Level.String()
+	data["severity"] = strings.ToUpper(entry.Level.String())
 	output := fmt.Sprintf("%s", data["message"])
 	if f.ShowTime {
 		output = fmt.Sprintf("%s %s", data["time"], output)
